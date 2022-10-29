@@ -4,7 +4,7 @@ from posixpath import expanduser
 import re
 home_dir = expanduser("~")
 
-# This code extracts the build version of proton
+# This code extracts the build version of proton into the Downloads folder
 
 f = open(home_dir+"/.local/share/Steam/steamapps/common/Proton - Experimental/version", "r")
 f = csv.reader(f)
