@@ -1,8 +1,8 @@
+#!/usr/bin/python
+
 #IMPORTANT !!!!!!!!!!!!!!!!!!!
 # You need to be enrolled in the proton expiermental beta for this to work, otherwise it will just get the latest expiermental non-bleeding edge
 
-
-#!/usr/bin/python
 import os
 import csv
 from posixpath import expanduser
