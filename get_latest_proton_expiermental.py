@@ -1,3 +1,8 @@
+# IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# You need to be on the latest bleeding edge version of proton for it to extract the right version
+
+
+
 import os
 import csv
 from posixpath import expanduser
