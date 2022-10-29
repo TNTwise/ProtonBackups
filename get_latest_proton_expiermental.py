@@ -67,10 +67,10 @@ else:
     with open(home_dir+'/Downloads/'+proton_ver+'/'+"/proton", "w") as f:
         for value in temp_list:
             f.write(value)
-    #FIXME - Zip is annoying, im prob gonna switch to tar.xf
+
     #this code will ask the user if they want to zip it
-    '''isCompress = input("Do you want to compress it? (y / n): ")
+    #This is dumb
+    isCompress = input("Do you want to compress it? (y / n): ")
     if isCompress == "y":
-        os.system("zip "+proton_ver+'.zip  '+home_dir+'Downloads/'+proton_ver+'/ *')
-    print(proton_ver+'.zip')
-    print(home_dir+'/Downloads/'+proton_ver+'/ ')'''
+        os.chdir(home_dir+'/Downloads')
+        os.system('zip  -b '+home_dir+'/Downloads/ -r -y '+proton_ver+'.zip  '+proton_ver+'/*')
