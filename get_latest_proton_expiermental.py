@@ -70,7 +70,19 @@ else:
 
     #this code will ask the user if they want to zip it
     #This is dumb
+    
     isCompress = input("Do you want to compress it? (y / n): ")
+    isCompress = isCompress.lower()
     if isCompress == "y":
         os.chdir(home_dir+'/Downloads')
         os.system('zip  -b '+home_dir+'/Downloads/ -r -y '+proton_ver+'.zip  '+proton_ver+'/*')
+
+    # Asks the user if they would like to automatically move it to the compat folder.
+    
+    isMove = input("Would you like to move the extracted version to the 'compatibilitytools.d' folder? (y / n): ")
+    isMove = isMove.lower()
+    if isMove == "y":
+        if os.path.isfile(home_dir+"/.steam/steam/compatibilitytools.d/"+proton_ver+"/proton") == False:
+            os.system("mv "+home_dir+"/Downloads/"+proton_ver+" "+home_dir+"/.steam/steam/compatibilitytools.d/")
+        else:
+            print("The version you have extracted already exists.")
