@@ -5,13 +5,13 @@ To run the program,
 git clone https://github.com/TNTwise/ProtonExpiermentalBleedingEdgeBuilds.git
 ```
 2. Entering the directory.
-'''bash
+```bash
 cd ProtonExpiermentalBleedingEdgeBuilds
-'''
+```
 3. Running the script.
-'''bash
+```bash
 python get_latest_proton_expiermental.py
-'''
+```
 4. The extracted proton version will be in your /home/$USER/Downloads/ directory.
 
 # Note, I did not create proton, I am just creating snapshots of https://github.com/ValveSoftware/Proton expiermental bleeding-edge builds.
