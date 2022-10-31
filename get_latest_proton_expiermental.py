@@ -74,8 +74,11 @@ else:
     isCompress = input("Do you want to compress it? (y / n): ")
     isCompress = isCompress.lower()
     if isCompress == "y":
-        os.chdir(home_dir+'/Downloads')
-        os.system('zip  -b '+home_dir+'/Downloads/ -r -y '+proton_ver+'.zip  '+proton_ver+'/*')
+        if os.path.isfile(home_dir+'/Downloads/'+proton_ver+'.zip') == False:
+            os.chdir(home_dir+'/Downloads')
+            os.system('zip  -b '+home_dir+'/Downloads/ -r -y '+proton_ver+'.zip  '+proton_ver+'/*')
+        else:
+            print("You have already compressed this version.")
 
     # Asks the user if they would like to automatically move it to the compat folder.
     
@@ -85,4 +88,4 @@ else:
         if os.path.isfile(home_dir+"/.steam/steam/compatibilitytools.d/"+proton_ver+"/proton") == False:
             os.system("mv "+home_dir+"/Downloads/"+proton_ver+" "+home_dir+"/.steam/steam/compatibilitytools.d/")
         else:
-            print("The version you have extracted already exists.")
+            print("The version you have extracted already exists in the compatibilitytools.d folder.")
