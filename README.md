@@ -9,7 +9,7 @@ git clone https://github.com/TNTwise/ProtonExperimentalBuilds.git
 ```
 2. Entering the directory.
 ```bash
-cd ProtonExpiermentalBuilds
+cd ProtonExperimentalBuilds
 ```
 3. Running the script.
 ```bash
