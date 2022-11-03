@@ -2,11 +2,11 @@
 To run the program,
 1. Clone the repo.
 ```bash
-git clone https://github.com/TNTwise/ProtonExpiermentalBleedingEdgeBuilds.git
+git clone https://github.com/TNTwise/ProtonExpiermentalBuilds.git
 ```
 2. Entering the directory.
 ```bash
-cd ProtonExpiermentalBleedingEdgeBuilds
+cd ProtonExpiermentalBuilds
 ```
 3. Running the script.
 ```bash
