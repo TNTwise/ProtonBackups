@@ -22,8 +22,13 @@ for value in row:
 proton_ver = re.findall("-[\d].[\d]-[\d]*", proton_ver)
 for value in proton_ver:
     proton_ver = value
-
-proton_ver = "ExBE" + proton_ver
+temp_num = 0 #This is set to count the amount of letters in the proton version, and if there is more than 9, it will be set as a proton experimental non bleeding edge version.
+for i in proton_ver:
+    temp_num +=1
+if temp_num < 9:
+    proton_ver = "ExBE" + proton_ver
+else:
+    proton_ver = "Ex" + proton_ver
 proton_dir = home_dir+'/Downloads/'+proton_ver+'/'+proton_ver
 
 #Checks to see if the proton version has already been copied, this prevents errors.
