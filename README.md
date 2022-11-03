@@ -1,4 +1,4 @@
-# This Program allows you to create smapshots of Proton Experimental bleeding edge builds.
+# This Program allows you to create smapshots of Proton Experimental and bleeding edge builds.
 This will create a snapshot of the current Proton Experimental build downloaded to the computer.
 If you want to save bleeding edge builds of proton
 1. Go to Proton Experimental
