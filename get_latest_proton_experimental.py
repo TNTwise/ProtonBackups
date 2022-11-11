@@ -9,6 +9,9 @@ import csv
 from posixpath import expanduser
 import re
 home_dir = expanduser("~")
+cwd = os.getcwd() 
+
+
 
 # This code extracts the build version of proton
 
@@ -30,6 +33,16 @@ if temp_num < 12:
 else:
     proton_ver = "Ex" + proton_ver
 proton_dir = home_dir+'/Downloads/'+proton_ver+'/'+proton_ver
+
+# This code saves the latest version of proton in a file, and if it does exist, it reads the file and gets the last proton version
+if os.path.isfile(cwd+"/proton_last_ver") == False:
+    os.mknod(cwd+"/proton_last_ver")
+else:
+    f = open(cwd+"/proton_last_ver")
+    f = csv.reader(f)
+    for row in f:
+        proton_last_ver = row
+
 
 #Checks to see if the proton version has already been copied, this prevents errors.
 if os.path.isfile(home_dir+'/Downloads/' + proton_ver+"/proton") == True:
@@ -94,3 +107,29 @@ if isMove == "y":
             os.system("mv "+home_dir+"/Downloads/"+proton_ver+" "+home_dir+"/.steam/steam/compatibilitytools.d/")
     else:
         print("The version you have extracted already exists in the compatibilitytools.d folder.")
+        isdel_1 = input("Do you want to delete the extracted version? (y / n): ")
+        isdel_1 = isdel_1.lower()
+        if isdel_1 == "y":
+            os.system("rm -f"+home_dir+"/Downloads/"+proton_ver)
+if isMove == "n": 
+    isdel_1 = input("Do you want to delete the extracted version? (y / n): ")
+    isdel_1 = isdel_1.lower()
+    if isdel_1 == "y":
+        os.system("rm -f"+home_dir+"/Downloads/"+proton_ver)
+
+if os.path.isfile(cwd+"/proton_last_ver") == True:
+    # This will ask you if you want to delete the previous version
+    is_del_last_ver = input("Do you want to delete the last version? (y / n): ")
+    if is_del_last_ver.lower() == "y":
+        os.system("rm -rf "+home_dir+"/.steam/steam/compatibilitytools.d/"+proton_ver+"/")
+
+
+# This code will overwrite the file with the current version of proton
+with open(cwd+"/proton_last_ver", "w") as f:
+    f.write(proton_ver)
+
+
+
+
+
+
