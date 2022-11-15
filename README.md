@@ -1,6 +1,6 @@
 # This Program allows you to create snapshots of Proton Experimental and bleeding edge builds.
 This will create a snapshot of the current Proton Experimental build downloaded to the computer.
-If you are creating an Experimental snapshot, it will look like Ex-(Date it was created)
+If you are creating an Experimental snapshot, it will look like Ex-(Date it was created) <br />
 If you are creating an Experimental bleeding edge snapshot, it will look like ExBE-(Version)
 To run the program,
 1. Clone the repo.
