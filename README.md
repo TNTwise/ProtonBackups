@@ -25,3 +25,5 @@ To run a build,
 3. In steam, go to the games settings, -> properties -> compatibility.
 4. Check Force the use of a specific Steam Play compatibility tool.
 5. click on the ExBE or Ex version of proton.
+
+Should probably add automatically detect if it is an experimental build or bleeding edge and delete the right version.
