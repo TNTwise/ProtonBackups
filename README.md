@@ -27,3 +27,4 @@ To run a build,
 5. click on the ExBE or Ex version of proton.
 
 Should probably add automatically detect if it is an experimental build or bleeding edge and delete the right version.
+Maybe add an automatically download and install intro compadibility tools folder script.
