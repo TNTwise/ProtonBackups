@@ -11,27 +11,29 @@ import re
 home_dir = expanduser("~")
 cwd = os.getcwd() 
 
-
-
+def get_proton_ver():
+    f = open(home_dir+"/.local/share/Steam/steamapps/common/Proton - Experimental/version", "r")
+    f = csv.reader(f)
+    for row in f: 
+        build_num = row
+    proton_ver = ""
+    for value in row:
+        proton_ver = value
+    proton_ver = re.findall("-[\d].[\d]-[\d]*", proton_ver) 
+    for value in proton_ver:
+        proton_ver = value
+    temp_num = 0 #This is set to count the amount of letters in the proton version, and if there is more than 9, it will be set as a proton experimental non bleeding edge version.
+    for i in proton_ver:
+        temp_num +=1
+    if temp_num < 12:
+        proton_ver = "ExBE" + proton_ver
+    else:
+        proton_ver = "Ex" + proton_ver
+    return proton_ver
+proton_ver = get_proton_ver()
 # This code extracts the build version of proton
 
-f = open(home_dir+"/.local/share/Steam/steamapps/common/Proton - Experimental/version", "r")
-f = csv.reader(f)
-for row in f: 
-    build_num = row
-proton_ver = ""
-for value in row:
-    proton_ver = value
-proton_ver = re.findall("-[\d].[\d]-[\d]*", proton_ver)
-for value in proton_ver:
-    proton_ver = value
-temp_num = 0 #This is set to count the amount of letters in the proton version, and if there is more than 9, it will be set as a proton experimental non bleeding edge version.
-for i in proton_ver:
-    temp_num +=1
-if temp_num < 12:
-    proton_ver = "ExBE" + proton_ver
-else:
-    proton_ver = "Ex" + proton_ver
+
 proton_dir = home_dir+'/Downloads/'+proton_ver+'/'+proton_ver
 
 # This code saves the latest version of proton in a file, and if it does exist, it reads the file and gets the last proton version
