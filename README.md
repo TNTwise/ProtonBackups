@@ -17,7 +17,6 @@ python get_latest_proton_experimental.py
 ```
 4. The extracted proton version will be in your /home/$USER/Downloads/ directory.
 
-# Note, I did not create proton, I am just uploading snapshots of https://github.com/ValveSoftware/Proton Experimental and bleeding-edge builds.
 
 To run a build, 
 1. Download a build from the releases tab. 
